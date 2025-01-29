@@ -1,4 +1,4 @@
-# eShoes 
+# 👟 eShoes 
 
 **eShoes** is a backend project for an hypothetical eCommerce called eShoes, built with ASP.NET Core 8.0 and PostgreSQL. It provides comprehensive functionalities for managing products, user authentication, shopping carts, orders, and payments integrated with Stripe. Containerized using Docker and orchestrated with Docker Compose, the project ensures easy deployment and consistent environments across different platforms.
 
