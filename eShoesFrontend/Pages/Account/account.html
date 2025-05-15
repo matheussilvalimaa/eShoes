@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="account.css">
+    <link rel="shortcut icon" href="/Pages/images/shoes.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="header-inner-content">
+                <h1 class="logo"> <img src="/Pages/images/Logo.svg" alt="site icon"></h1>
+                <nav>
+                    <ul>
+                        <li><a href="/Pages/Home/index.html">Home</a></li>
+                        <li><a href="/Pages/About/about.html">About</a></li>
+                        <li><a href="/Pages/Products/products.html">Products</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-icon-container">
+                  <a href="/Pages/Cart/cart.html">
+                    <img src="/Pages/images/cart.png" class="cart-button" alt="cart icon">
+                  </a>
+                    <img src="/Pages/images/menu.png" class="menu-button" alt="menu icon">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="main-content">
+          <section class="orders-section">
+            <div class="h2-container">
+              <h2>My Orders</h2>
+            </div>
+            <div id="orders-list"></div>
+          </section>
+          <div class="account-box">
+            <div class="form-container">
+              <div class="form-inner">
+                <form class="profile-form">
+                  <h2>Profile</h2>
+    
+                  <div class="form-group">
+                    <label for="username"></label>
+                    <input type="text" id="username" placeholder="Username" value="" >
+                  </div>
+    
+                  <div class="form-group">
+                    <label for="email"></label>
+                    <input type="email" id="email" placeholder="Email" value="" >
+                  </div>
+    
+                  <div class="form-group">
+                    <label for="password"></label>
+                    <input type="password" id="password" placeholder="Password" value="" >
+                  </div>
+    
+                  <div class="button-group">
+                    <label for="edit" class="btn-change">Edit</label>
+                    <button type="button" class="btn-logout">Logout</button>
+                  </div>
+                </form>
+              </div> 
+            </div>
+          </div> 
+        </section>
+      </main>
+      <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h1 class="logo"> <img src="/Pages/images/Logo.svg" alt=""></h1>
+                <p>Your style on your feet</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <hr>
+            <p>
+                &copy; 2025 -
+                 <strong>matheussilvalima</strong>
+            </p>
+        </div>
+      </footer>
+
+      <script src="account.js"></script>
+</body>
+</html>

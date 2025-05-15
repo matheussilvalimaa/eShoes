@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="product.css">
+    <link rel="shortcut icon" href="/Pages/images/shoes.ico" type="image/x-icon">
+    <title>Product</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="header-inner-content">
+                <h1 class="logo"> <img src="/Pages/images/Logo.svg" alt="site icon"></h1>
+                <nav>
+                    <ul>
+                        <li><a href="/Pages/Home/index.html">Home</a></li>
+                        <li><a href="/Pages/About/about.html">About</a></li>
+                        <li id="account-link">Account</li>
+                        <li><a href="/Pages/Products/products.html">Products</a></li>
+
+                    </ul>
+                </nav>
+                <div class="nav-icon-container">
+                    <a href="/Pages/Cart/cart.html">
+                        <img src="/Pages/images/cart.png" class="cart-button" alt="cart icon">
+                    </a>
+                    <img src="/Pages/images/menu.png" class="menu-button" alt="menu icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="product-container">
+            <img id="product-image" class="product-image" src="" alt="Product's image">
+
+            <div class="product-info">
+                <h1 id="product-name"></h1>
+                <p id="product-price"></p>
+                <p id="product-description"></p>
+
+                <div class="size-selector">
+                    <h3>Available sizes</h3>
+                    <div id="size-options"></div>
+                </div>
+
+                <button id="add-to-cart">Add to Cart</button>
+            </div>
+        </section>
+        <section class="reviews-section">
+            <h2>Customer Reviews</h2>
+            <div id="reviews-list">
+            </div>
+            
+            <div class="review-form" id="review-form">
+              <h3>Leave a Review</h3>
+              <div class="star-input" id="star-input">
+                <span data-value="1">☆</span>
+                <span data-value="2">☆</span>
+                <span data-value="3">☆</span>
+                <span data-value="4">☆</span>
+                <span data-value="5">☆</span>
+              </div>
+              <textarea id="review-text" placeholder="Write your review here"></textarea>
+              <button id="btn-submit-review">Submit Review</button>
+            </div>
+          </section>
+        <script src="product.js"></script>
+    </main>
+</body>
+</html>

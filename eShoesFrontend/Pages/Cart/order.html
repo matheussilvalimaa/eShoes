@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="order.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="shortcut icon" href="/Pages/images/shoes.ico" type="image/x-icon">
+    <title>Purchase</title>
+</head>
+<body>
+    <main>
+        <div class="main-content">
+            <h1>Complete your purchase</h1>
+        <section class="purchase-box">
+            <input type="radio" name="step" id="address" hidden checked>
+            <input type="radio" name="step" id="payment" hidden >
+            <input type="radio" name="step" id="confirmation" hidden >
+            <div class="address-box">
+                <div class="form-container">
+                  <div class="form-inner">
+                    <form action="#" class="address-form">
+                      <h1>Address</h1>
+                      <div class="form-group">
+                        <label for="postal-code"></label>
+                        <input type="text" id="pcode" maxlength="9" placeholder="Postal Code" required> 
+                      </div>
+    
+                      <div class="form-group">
+                        <label for="street"></label>
+                        <input type="text" id="street" placeholder="Street" required>
+                      </div>
+    
+                      <div class="form-group">
+                        <label for="house-number"></label>
+                        <input type="text" id="house-number" placeholder="Number" maxlength="4" required>
+                      </div>
+    
+                      <div class="form-group">
+                        <label for="city"></label>
+                        <input type="text" id="city" placeholder="City" required>
+                      </div>
+    
+                      <div class="form-group">
+                        <label for="state"></label>
+                        <input type="text" id="state" placeholder="State" required>
+                      </div>
+
+                      <button type="button" id="btn-address-continue">Continue</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="payment-box">
+                <div class="form-container">
+                  <div class="form-inner">
+                    <form action="#" class="payment-form">
+                      <h2>Payment Methods</h2>
+                      <button type="button" id="add-card">Card</button>
+                      <button type="button" id="btn-pix">PIX</button>
+                      <button type="button" id="btn-bankslip">Bank Slip</button>
+
+                      <button type="button" id="btn-payment-continue">Continue</button>
+                      <button type="button" id="btn-payment-return">Cancel</button>
+                    </form>
+                    <form action="#" class="add-card-form">
+                      <div class="form-group">
+                        <div id="card-element"></div>
+                      </div>
+
+                      <div class="button-group">
+                        <button type="button" id="btn-save-card">Save Card</button>
+                        <button type="button" id="btn-card-return">Cancel</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+             
+            <div class="confirmation-box">
+              <div class="form-container">
+                <div class="form-inner">
+                  <form action="#" class="confirmation-form">
+                    <h2>Confirm your informations</h2>
+                    <div class="order-summary">
+                      <div class="item-list"></div>
+                      <div id="payment-choice"></div>
+                      <div id="address-choice"></div>
+                      <div class="price-row">
+                        <span>Shipping Fee</span>
+                        <div id="shipping-cost"></div>
+                        <span>Total</span>
+                        <div id="total-cost"></div>
+                      </div>
+                      
+                      <div class="button-group">
+                        <button type="button" id="btn-payment-final">Complete payment</button>
+                        <button type="button" id="btn-confirm-return">Cancel</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+        </section>
+        </div>
+    </main>
+
+    <script src="order.js"></script>
+</body>
+</html>

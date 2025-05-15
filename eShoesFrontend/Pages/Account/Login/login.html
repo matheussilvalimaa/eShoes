@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="login.css" />
+  <link rel="shortcut icon" href="/Pages/images/shoes.ico" type="image/x-icon">
+  <title>Login</title>
+</head>
+<body>
+  <main>
+    <section class="wrapper">
+      <header> 
+        <nav class="slide-controls">
+          <input type="radio" name="slide" id="login" checked>
+          <input type="radio" name="slide" id="signup">
+          <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Signup</label>
+          <div class="slider-tab"></div>
+        </nav>
+      </header>
+
+      <section class="form-container">
+        <div class="form-inner">
+          <form action="#" method="post" class="login">
+            <div class="field">
+              <input type="text" placeholder="Username" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password" required>
+            </div>
+            <div class="pass-link">
+              <a href="#">Forgot password?</a>
+            </div>
+            <div class="field-btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Login" id="loginSubmit">
+              <div class="spinner" id="loginSpinner" style="display: none;"></div>
+            </div>
+            <div class="signup-link">
+              Not an user yet? <a href="#">Signup now</a>
+            </div>
+          </form>
+
+          <form action="#" method="post" class="signup">
+            <div class="field">
+              <input type="text" placeholder="Username" required>
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Email" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password" required>
+            </div>
+            <div class="field-btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Signup" id="signupSubmit">
+              <div class="spinner" id="signupSpinner" style="display: none;"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </main>
+  
+  <script src="login.js"></script>
+</body>
+</html>

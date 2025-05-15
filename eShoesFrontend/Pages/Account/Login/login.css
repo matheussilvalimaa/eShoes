@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  html, body {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url('loginwall.svg') no-repeat center/cover;
+    display: grid;
+    place-items: center;
+  }
+  
+  ::selection {
+    background: #fa4299;
+    color: #fff;
+  }
+  
+  .wrapper {
+    overflow: hidden;
+    max-width: 390px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Cabeçalho e título */
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  header h1.title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  header h1.title span {
+    width: 50%;
+    font-size: 35px;
+    font-weight: 600;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .slide-controls {
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    margin: 30px 0 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    justify-content: space-between;
+  }
+  
+  .slide-controls .slide {
+    flex: 1;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.6s ease;
+  }
+  
+  .slide-controls .slide.signup {
+    color: #000;
+  }
+  
+  .slide-controls .slider-tab {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    z-index: 0;
+    border-radius: 5px;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: #536bca;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  #signup:checked ~ .slider-tab {
+    left: 50%;
+  }
+  
+  #signup:checked ~ label.signup {
+    color: #000;
+    cursor: default;
+    user-select: none;
+  }
+  
+  #signup:checked ~ label.login {
+    color: #000;
+  }
+  
+  #login:checked ~ label.signup {
+    color: #000;
+  }
+  
+  #login:checked ~ label.login {
+    cursor: default;
+    user-select: none;
+  }
+  
+  .form-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .form-inner {
+    display: flex;
+    width: 200%;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .form-inner form {
+    width: 50%;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .field {
+    margin-top: 20px;
+    height: 50px;
+    width: 100%;
+  }
+  
+  .field input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+  }
+  
+  .spinner {
+    border: 3px solid #f3f3f3;     
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  .field input:focus {
+    border-color: #1B1212;
+  }
+  
+  .pass-link {
+    margin-top: 5px;
+    text-align: right;
+  }
+  
+  .pass-link a {
+    color: #536bca;
+    text-decoration: none;
+  }
+  
+  .pass-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .signup-link {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .signup-link a {
+    color: #536bca;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .field-btn {
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  
+  .btn-layer {
+    background: #536bca;
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+  }
+  
+  .field-btn:hover .btn-layer {
+    left: 0;
+  }
+  
+  .field-btn input[type="submit"] {
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 800px) {
+    .wrapper {
+      max-width: 320px;
+      padding: 20px;
+    }
+    
+    header h1.title span {
+      font-size: 28px;
+    }
+    
+    .slide-controls {
+      height: 45px;
+    }
+    
+    .slide-controls .slide {
+      font-size: 16px;
+      line-height: 43px;
+    }
+    
+    .field {
+      height: 45px;
+    }
+    
+    .field input {
+      font-size: 15px;
+    }
+    
+    .field-btn input[type="submit"] {
+      height: 45px;
+      font-size: 18px;
+    }
+  }
+  
