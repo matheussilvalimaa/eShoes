@@ -69,7 +69,6 @@ namespace eShoes.Services
                     "charges.data.payment_method_details.card",
                     "charges.data.payment_method_details.boleto",
                     "next_action.pix_display_qr_code",
-                    "next_action.boleto_display_details"
                 }
             };
 
@@ -100,18 +99,6 @@ namespace eShoes.Services
                         ExpiresAfterSeconds = 3600
                     }
                 };
-            }
-            else if (rq.Payment.Method == "boleto")
-            {
-                options.PaymentMethodOptions = new PaymentIntentPaymentMethodOptionsOptions
-                {
-                    Boleto = new PaymentIntentPaymentMethodOptionsBoletoOptions
-                    {
-                        ExpiresAfterDays = 3
-                    }
-                };
-
-                options.Confirm = true;
             }
 
             var pi = await new PaymentIntentService().CreateAsync(options);
@@ -149,7 +136,6 @@ namespace eShoes.Services
             // 6) Construir resposta
             string pixQr = null;
             string pixCode = null;
-            string boletoUrl = null;
             if (rq.Payment.Method == "pix")
             {
                 if (pi.NextAction?.Type == "pix_display_qr_code" 
@@ -157,14 +143,6 @@ namespace eShoes.Services
                 {
                     pixQr   = pi.NextAction.PixDisplayQrCode.ImageUrlSvg;
                     pixCode = pi.NextAction.PixDisplayQrCode.Data;
-                }
-            }
-            else if (rq.Payment.Method == "boleto")
-            {
-                if (pi.NextAction?.Type == "boleto_display_details" 
-                    && pi.NextAction.BoletoDisplayDetails != null)
-                {
-                    boletoUrl = pi.NextAction.BoletoDisplayDetails.HostedVoucherUrl;
                 }
             }
 
@@ -175,7 +153,6 @@ namespace eShoes.Services
                 Last4        = rq.Payment.Method == "card"   ? last4 : null,
                 PixQrCode    = pixQr,
                 PixCode      = pixCode,
-                BoletoUrl    = boletoUrl
             };
         }
 
