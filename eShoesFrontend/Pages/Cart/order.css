@@ -121,8 +121,7 @@ form h1,form h2 {
 }
 
 .payment-form > button#add-card,
-.payment-form > button#btn-pix,
-.payment-form > button#btn-bankslip {
+.payment-form > button#btn-pix {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -138,8 +137,7 @@ form h1,form h2 {
 }
 
 .payment-form > button#add-card.selected
-.payment-form > button#btn-pix.selected,
-.payment-form > button#btn-bankslip.selected {
+.payment-form > button#btn-pix.selected {
   border: 2px solid #4f46e5;
   background-color: #eef2ff;
 }
@@ -160,27 +158,15 @@ form h1,form h2 {
   background: url('/Pages/images/pix.svg') center/contain no-repeat;
 }
 
-.payment-form > button#btn-bankslip::before {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background: url('/Pages/images/bankslip.svg') center/contain no-repeat;
-}
-
 .payment-form > button#add-card { 
   justify-content: flex-start;
 }
 .payment-form > button#btn-pix {
   justify-content: flex-start;
 }
-.payment-form > button#btn-bankslip {
-  justify-content: flex-start;
-}
 
 .payment-form > button#add-card:hover,
-.payment-form > button#btn-pix:hover,
-.payment-form > button#btn-bankslip:hover {
+.payment-form > button#btn-pix:hover {
   border-color: #536bca;
   background: #f0f4ff;
 }
