@@ -160,13 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
     paymentChoiceEl.innerHTML = `<img src="/Pages/images/pix.svg" class="card-logo-small" alt="PIX"><span>PIX</span>`;
   });
 
-  document.querySelector('#btn-bankslip').addEventListener('click', () => {
-    selectedPaymentType = 'boleto';
-    document.querySelectorAll('#add-card, #btn-pix, #btn-bankslip').forEach(b => b.classList.remove('selected'));
-    document.getElementById('btn-bankslip').classList.add('selected');
-    paymentChoiceEl.innerHTML = `<img src="/Pages/images/bankslip.svg" class="card-logo-small" alt="Bank Slip"><span>Bank Slip</span>`;
-  });
-
   document.getElementById('btn-payment-continue').addEventListener('click', () => {
     if (document.querySelector('.add-card-form').classList.contains('active')) return;
     if (!selectedPaymentType) return alert('Select a payment method');
@@ -230,13 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
               }
             };
             break;
-  
-        case 'bankslip':
-          modal.showBankSlip(data.boletoUrl);
-          setTimeout(() => {
-            window.location.href = '/Pages/Account/account.html';
-          }, 10000);
-          break;
       }
   
     } catch (error) {
@@ -281,11 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
         checkmarkEl.style.display = 'none';
         m.querySelector('#modal-spinner').style.display = 'none';
         m.querySelector('#modal-body').innerHTML = `<img src="${qr}" /><div>${code}</div>`;
-      },
-      showBankSlip: url => {
-        checkmarkEl.style.display = 'none';
-        m.querySelector('#modal-spinner').style.display = 'none';
-        m.querySelector('#modal-body').innerHTML = `<a href="${url}" target="_blank">Open Boleto</a>`;
       },
       showSuccess: msg => {
         checkmarkEl.style.display = 'flex';
