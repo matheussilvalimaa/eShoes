@@ -3,6 +3,8 @@
 **eShoes** is a full-stack e-commerce sample project built with .NET 8, Entity Framework Core, PostgreSQL, and Stripe. It features JWT-based authentication, CRUD operations for products, carts, orders, and integrates Stripe as a payment gateway. The front-end is a simple HTML/CSS/JavaScript Spa using the Live Server extension for local HTTPS.
 
 ## 📂 Repository Structure
+
+```bash
 ├── backend/ # ASP.NET Core Web API
 │ ├── Controllers/
 │ ├── Models/
@@ -23,6 +25,7 @@
 │ │ └── About/
 │ └── settings.json # VS Code Live Server config
 ├── .env.example
+```
 
 ## ✨ Features
 
