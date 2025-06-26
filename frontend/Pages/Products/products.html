@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="products.css">
+    <link rel="shortcut icon" href="/Pages/assets/images/shoes.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="header-inner-content">
+                <h1 class="logo"> <img src="/Pages/assets/images/Logo.svg" alt="Logo"></h1>
+                <nav>
+                    <ul>
+                        <li><a href="/Pages/Home/index.html">Home</a></li>
+                        <li><a href="/Pages/About/about.html">About</a></li>
+                        <li id="account-link">Account</li>
+                    </ul>
+                </nav>
+                <div class="nav-icon-container">
+                    <a href="/Pages/Cart/cart.html">
+                        <img src="/Pages/images/cart.png" class="cart-button" alt="cart icon">
+                    </a>
+                    <img src="/Pages/assets/images/menu.png" class="menu-button" alt="menu icon">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <button class="sidebar-toggle-btn">☰</button>
+
+    <aside id="sidebar">
+        <nav>
+            <h2>Brands</h2>
+            <ul class="brand-options">
+                <li><a href="#" id="nike-filter">Nike</a></li>
+                <li><a href="#" id="asics-filter">Asics</a></li>
+                <li><a href="#" id="puma-filter">Puma</a></li>
+                <li><a href="#" id="mizuno-filter">Mizuno</a></li>
+            </ul>
+            <h2>Filter Options</h2>
+            <ul class="filter-options">
+                <li><a href="#" id="price-high">Higher price</a></li>
+                <li><a href="#" id="price-low">Lower price</a></li>
+                <li><a href="#" id="rating-high">Better reviews</a></li>
+                <li><a href="#" id="rating-low">Worst reviews</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section class="products-list">
+          <h2>All Items</h2>
+          <div class="product-grid">
+          </div>
+        </section>
+      </main>      
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h1 class="logo"> <img src="/Pages/assets/images/Logo.svg" alt="Logo"></h1>
+                <p>Your style on your feet</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <hr>
+            <p>
+                &copy; 2025 -
+                 <strong>matheussilvalima</strong>
+            </p>
+        </div>
+    </footer>
+    <script src="products.js"></script>
+</body>
+</html>
