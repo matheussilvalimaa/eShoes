@@ -8,7 +8,6 @@ namespace eShoes.Authentication
     public class JwtService
     {
         private readonly SymmetricSecurityKey _signingKey;
-        private readonly ILogger<JwtService> _logger;
 
         public JwtService(string secretKey, ILogger<JwtService> logger)
         {
@@ -18,14 +17,11 @@ namespace eShoes.Authentication
             }
 
             _signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-            _logger = logger;
         }
 
         /// JWT token for a given username.
         public string GenerateToken(string username)
         {
-            _logger.LogInformation($"Generating JWT token for user '{username}'");
-
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, username)
@@ -41,7 +37,6 @@ namespace eShoes.Authentication
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var jwtString = tokenHandler.WriteToken(token);
-            _logger.LogDebug($"JWT token generated: {jwtString}");
             return jwtString;
         }
     }
